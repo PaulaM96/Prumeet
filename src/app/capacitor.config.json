@@ -1,0 +1,27 @@
+{
+    "appId": "io.ionic.starter",
+    "appName": "zoomCalendar",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www",
+    "linuxAndroidStudioPath": "/snap/android-studio/current/android-studio/bin/studio.sh",
+    "plugins": {
+      "SplashScreen": {
+        "launchShowDuration": 0
+      }
+      
+    },
+    
+    "cordova": {
+      "preferences": {
+        "ScrollEnabled": "false",
+        "BackupWebStorage": "none",
+        "SplashMaintainAspectRatio": "true",
+        "FadeSplashScreenDuration": "300",
+        "SplashShowOnlyFirstTime": "false",
+        "SplashScreen": "screen",
+        "SplashScreenDelay": "3000"
+      }
+    }
+  }
+  

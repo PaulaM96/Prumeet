@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <!--botão de logout //-->
+    
+    <ion-title class="ion-text-center">  PruMeet </ion-title>
+    <div class="titleicon">
+      <img src="assets/icon/favicon.png"/>
+    </div>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/calendario"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="openCalModal()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  
+    <div class="textRooms" no-padding>
+      <ion-text>MEUS EVENTOS</ion-text>
+    </div>
+    <div class="local">
+      <img class="local-image" src="/assets/images/my-events.jpg"/>
+    </div>
+ 
+<ion-list *ngFor="let event of events; let i=index;" class="accordion-list" lines="none" detail="false" no-padding>
+  <ion-item tappable (click)="toggleSection(i)" [ngClass]="{'section-active':event.open, 'section': !event.open}">
+    <ion-icon slot="start" name="arrow-forward" *ngIf="!event.open" ></ion-icon>
+    <ion-icon slot="start" name="arrow-down" *ngIf="event.open"></ion-icon>
+    <ion-label><b>{{event.title}}</b></ion-label>
+    </ion-item>
+
+  <div *ngIf="event.open" >
+    <ion-list lines="none" class="child-item">
+      <ion-item>
+        <ion-label>{{event.room.name}}</ion-label>
+        <p>De: {{ event.startTime | date: 'dd/MM/yyyy H:mm' }}<br> 
+           Até: {{ event.endTime | date: 'dd/MM/yyyy H:mm' }}<br></p>
+        
+        <ion-button (click)="editEvent(event.id)" fill="clear">
+          <ion-icon slot="icon-only" name="create"></ion-icon>
+        </ion-button>
+
+        <ion-button (click)="remove(event.id)" fill="clear">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-button>
+
+       
+      </ion-item>
+     
+    </ion-list>
+  </div>
+</ion-list>
+ 
+</ion-content>

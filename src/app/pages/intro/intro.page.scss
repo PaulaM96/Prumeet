@@ -1,0 +1,26 @@
+ion-content {
+    --background: #f0803a;
+  
+    
+}
+ 
+ion-slides {
+    height: 100%;
+    --bullet-background-active: #fff;
+    --bullet-background: #000;
+}
+
+.textIntro{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+/* For mobile phones: */
+[class*="imgintro"] {
+    width: 100%;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .imgintro{width: 58.33%;}
+  }

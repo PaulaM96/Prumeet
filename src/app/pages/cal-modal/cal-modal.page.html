@@ -1,0 +1,66 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-button (click)="close()">
+      <ion-icon name="close" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Agendar Reunião</ion-title>
+  <ion-buttons slot="end">
+    <ion-button (click)="save()">
+      <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+ 
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Título</ion-label>
+    <ion-input tpye="text" [(ngModel)]="event.title" required></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Horário de início</ion-label>
+        <ion-datetime displayFormat="H:mm" minuteValues="0,15,30,45"   placeholder="00:00h" [(ngModel)]="event.startTime" required></ion-datetime>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="stacked">Horário de Término</ion-label>
+        <ion-datetime displayFormat="H:mm" minuteValues="0,15,30,45"  placeholder="00:00h"  [(ngModel)]="event.endTime" required></ion-datetime>   
+  </ion-item>
+  
+
+  <ion-item *ngIf="loadReady">
+    <ion-label>Sala</ion-label>
+    <ion-select [(ngModel)]="event.room" required>
+        <ion-select-option *ngFor="let room of rooms" value={{room.id}} required>{{room.name}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-row>
+    <!-- Move back one screen of the slides -->
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="back()">
+        <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+ 
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{ viewTitle }}</h2>
+    </ion-col>
+
+    <ion-col size="2">
+      <ion-button fill="clear" (click)="next()">
+        <ion-icon name="arrow-forward" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <calendar
+    *ngIf="modalReady"
+    [calendarMode]="calendar.mode"
+    (onTimeSelected)="onTimeSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    [markDisabled]="markDisabled"
+    [currentDate]="calendar.currentDate"
+  >
+  </calendar>
+</ion-content>

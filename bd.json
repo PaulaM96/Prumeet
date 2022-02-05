@@ -1,0 +1,83 @@
+{
+  "Salas": [
+    {
+      "name": "TI ZOOM",
+      "description": "Sala de reunião virtual via Zoom Meetings"
+    },
+    {
+      "name": "COMERCIAL ZOOM",
+      "description": "Sala de reunião virtual via Zoom Meetings"
+    },
+    {
+      "name": "PRUMO ZOOM",
+      "description": "Sala de reunião virtual via Zoom Meetings"
+    },
+    {
+      "name": "SALA DE REUNIÃO 1",
+      "description": "Sala de reunião física, próxima ao financeiro"
+    },
+    {
+      "name": "SALA DE REUNIÃO 2",
+      "description": "Sala de reunião física, próxima ao SESMT"
+    },
+    {
+      "name": "SALA DE REUNIÃO 3",
+      "description": "Sala de reunião física, próxima ao Comercial"
+    },
+    {
+      "name": "SALA DE REUNIÃO 4",
+      "description": "Sala de reunião física, próxima ao TI"
+    },
+    {
+      "name": "AUDITÓRIO",
+      "description": "Auditório"
+    }
+  ],
+  "Eventos": [
+    {
+      "title": "teste1",
+      "description": "teste1",
+      "startTime": "2021-04-01T20:00:00.000Z",
+      "endTime": "2021-04-01T21:00:00.000Z",
+      "room": "2",
+      "allDay": false,
+      "id": 1
+    },
+    {
+      "title": "reuniao",
+      "description": "teste",
+      "startTime": "2021-05-05T15:00:00.000Z",
+      "endTime": "2021-05-05T16:00:00.000Z",
+      "room": "1",
+      "allDay": false,
+      "id": 2
+    },
+    {
+      "title": "teste",
+      "description": "test",
+      "startTime": "2021-04-05T00:00:00.000Z",
+      "endTime": "2021-04-05T01:00:00.000Z",
+      "room": "3",
+      "allDay": false,
+      "id": 3
+    },
+    {
+      "title": "Reuniao TI",
+      "startTime": "2021-04-06T18:00:00.000Z",
+      "description": "Responsavel ",
+      "endTime": "2021-04-06T19:00:00.000Z",
+      "room": "3",
+      "allDay": false,
+      "id": 4
+    },
+    {
+      "title": "test",
+      "description": "nome",
+      "startTime": null,
+      "endTime": null,
+      "room": "4",
+      "allDay": false,
+      "id": 5
+    }
+  ]
+}

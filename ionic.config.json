@@ -1,0 +1,8 @@
+{
+  "name": "zoomCalendar",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

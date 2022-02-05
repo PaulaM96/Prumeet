@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>PruMeet</ion-title>
+  </ion-toolbar>
+</ion-header>
+ 
+<ion-content>
+  <div class="formulario">
+  <form [formGroup]="ionicForm" (ngSubmit)="login()" novalidate>
+    <div class="input-group">
+      <ion-item style="margin: 0 15px">
+        <ion-label position="floating">Login</ion-label>
+        <ion-input formControlName="email" type="email" name="email" required="true"></ion-input>
+    </ion-item>
+      <!-- Error messages -->
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.email.errors?.required">Campo obrigatório.</span>
+
+      <ion-item style="margin: 0 15px">
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input formControlName="password" type="password" name="password" required="true"></ion-input>
+      </ion-item>
+      <!-- Error messages -->
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.password.errors?.required">Campo obrigatório.</span>
+
+      <ion-item style="margin: 0 15px 25px">
+          <ion-label>Empresa</ion-label>
+          <ion-select formControlName="company_id">
+              <ion-select-option *ngFor="let item of companies" value={{item.id}}>{{item.description}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <!-- Error messages -->
+      <span class="error ion-padding" *ngIf="isSubmitted && errorControl.company_id.errors?.required">Campo obrigatório.</span>
+    </div>
+  
+    <ion-toolbar class="footer">
+        <ion-row>
+            <ion-col>
+                <ion-button type="submit" expand="block" color="primary">Login</ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+  </form>
+  </div>
+</ion-content>

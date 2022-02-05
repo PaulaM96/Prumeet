@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Prumeet</string>
+    <string name="title_activity_main">Prumeet</string>
+    <string name="package_name">br.com.prumeet</string>
+    <string name="custom_url_scheme">br.com.prumeet</string>
+</resources>
